@@ -12,5 +12,5 @@ class Product_Controller:
         return self.product_list
 
     def add_product(self, product):
-
+        self.database.add_to_db(product)
 

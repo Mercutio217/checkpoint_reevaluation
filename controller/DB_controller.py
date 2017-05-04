@@ -31,8 +31,8 @@ class DBController:
         """ Saves todo item in database """
         database = self.get_connection()
         cursor = database.cursor()
-        cursor.execute("INSERT INTO products (name, description, price) "
+        cursor.execute("INSERT INTO products (name, description, price)"
                        "VALUES (?, ?, ?);",
-                       (str(product.name), product.description, product.price))
+                       (product.name, product.description, product.price))
         database.commit()
         database.close()
