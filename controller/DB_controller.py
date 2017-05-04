@@ -16,18 +16,17 @@ class DB:
         base = sqlite3.connect(cls.filename)
         return base
 
-    def get_all(self):
-        def get_all(cls):
-            database = DB.get_connection()
-            task_list = []
-            db_list = database.execute("SELECT * FROM tasks")
-            for task in db_list:
-                new_task = Task(task[1], task[2], task[3])
-                new_task.id = task[0]
-                task_list.append(new_task)
-            database.close()
+    def get_all(cls):
+        database = DB.get_connection()
+        task_list = []
+        db_list = database.execute("SELECT * FROM products")
+        for task in db_list:
+            new_task = Task(task[1], task[2], task[3])
+            new_task.id = task[0]
+            task_list.append(new_task)
+        database.close()
 
-            return task_list
+        return task_list
     @classmethod
     def db_reset(cls):
         conn = sqlite3.connect(cls.filename)
