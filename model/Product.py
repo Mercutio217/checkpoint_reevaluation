@@ -8,4 +8,3 @@ class Product:
     def __repr__(self):
         return "{} Description: {} Price: {}".format(self.name, self.description, self.price)
 
-    
