@@ -4,16 +4,14 @@ import os
 from model.Product import Product
 
 
-class DB:
+class DBController:
 
     """Class for database connection"""
 
-    # dir = os.path.dirname(__file__)
-    # filename = os.path.join(dir, "todo.db")
 
     def __init__(self):
         self.dir = os.path.dirname(__file__)
-        self.filename = os.path.join(dir, "products.db")
+        self.filename = os.path.join(dir, "todo.db")
 
     def get_connection(self):
         base = sqlite3.connect(self.filename)
