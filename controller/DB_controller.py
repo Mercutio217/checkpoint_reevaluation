@@ -5,9 +5,7 @@ from model.Product import Product
 
 
 class DBController:
-
     """Class for database connection"""
-
 
     def __init__(self):
         self.dir = os.path.dirname(__file__)
@@ -29,6 +27,12 @@ class DBController:
 
         return list_of_products
 
-
-
-
+    def add_to_db(self, product):
+        """ Saves todo item in database """
+        database = self.get_connection()
+        cursor = database.cursor()
+        cursor.execute("INSERT INTO products (name, description, price) "
+                       "VALUES (?, ?, ?);",
+                       (str(product.name), product.description, product.price))
+        database.commit()
+        database.close()
