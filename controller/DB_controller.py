@@ -1,6 +1,9 @@
 import sqlite3
 import os
 
+from model.Product import Product
+
+
 class DB:
 
     """Class for database connection"""
@@ -10,33 +13,24 @@ class DB:
 
     def __init__(self):
         self.dir = os.path.dirname(__file__)
-        self.filename = os.path.join(dir, "todo.db")
+        self.filename = os.path.join(dir, "products.db")
 
-    def get_connection(cls):
-        base = sqlite3.connect(cls.filename)
+    def get_connection(self):
+        base = sqlite3.connect(self.filename)
         return base
 
-    def get_all(cls):
-        database = DB.get_connection()
-        task_list = []
+    def get_all(self):
+        database = self.get_connection()
+        list_of_products = []
         db_list = database.execute("SELECT * FROM products")
-        for task in db_list:
-            new_task = Task(task[1], task[2], task[3])
-            new_task.id = task[0]
-            task_list.append(new_task)
+        for info in db_list:
+            product = Product(info[1], info[2], info[3])
+            product.id = info[0]
+            list_of_products.append(product)
         database.close()
 
-        return task_list
-    @classmethod
-    def db_reset(cls):
-        conn = sqlite3.connect(cls.filename)
-        curr = conn.cursor()
-        curr.execute("DROP TABLE IF EXISTS todo;")
-        curr.execute("CREATE TABLE todo (id INTEGER PRIMARY KEY AUTOINCREMENT, task_name TEXT, done BOOLEAN);")
-        curr.execute(
-            "INSERT INTO todo (task_name, done) VALUES ('brush teeth', 1), ('speak with the duck', 0), ('code', 0);")
-        conn.commit()
-        conn.close()
+        return list_of_products
+
 
 
 
