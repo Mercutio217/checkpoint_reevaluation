@@ -8,4 +8,5 @@ class Product_Controller:
         self.database = my_database.get_connection()
         self.product_list = my_database.get_all()
 
-    def add(self):
+    def get_product_list(self):
+        return self.product_list
