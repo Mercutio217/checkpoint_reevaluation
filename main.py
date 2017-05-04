@@ -14,7 +14,7 @@ def index():
 @app.route("/add", methods=["GET", "POST"])
 def add_product():
     if request.method == "GET":
-        render_template("add_product.html")
+        return render_template("add_product.html")
     else:
         new_product = Product(request.form("name"), request.form("description"), request.form("price"))
         my_controller.add_product(new_product)

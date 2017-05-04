@@ -38,6 +38,9 @@ table {
     border-collapse: collapse;
     width: 100%;
 }
+thead {
+    color: forestgreen;
+}
 
 td, th {
     border: 1px solid #dddddd;
