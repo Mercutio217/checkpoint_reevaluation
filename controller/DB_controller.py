@@ -11,7 +11,7 @@ class DBController:
 
     def __init__(self):
         self.dir = os.path.dirname(__file__)
-        self.filename = os.path.join(dir, "todo.db")
+        self.filename = os.path.join(self.dir, "products.db")
 
     def get_connection(self):
         base = sqlite3.connect(self.filename)

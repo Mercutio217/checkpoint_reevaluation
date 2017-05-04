@@ -1,6 +1,26 @@
-{% extends style.html %}
+{% extends "style.html" %}
 {% block title %} Brand new shop! {% endblock %}
 {% block header %}
 <div id="header-title"></div>
 <div id="header-button"></div> {% endblock %}
-{% block container %}{% endblock %}
+{% block container %}
+<table>
+<thead>
+<tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Price</th>
+</tr>
+</thead>
+<tbody>
+{% for product in list_of_products %}
+    <tr>
+    <th>{{ product.name }}</th>
+    <th>{{ product.description }}</th>
+    <th>{{ product.price }}</th>
+    </tr>
+
+{% endfor %}
+
+</tbody>
+</table>{% endblock %}
