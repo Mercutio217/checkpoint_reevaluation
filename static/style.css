@@ -1,0 +1,50 @@
+header {
+    position: relative;
+    margin-top: 25px;
+    margin-bottom: 20px;
+}
+#header-title {
+    text-align: left;
+    width: 25px;
+    margin-left: 25px;
+    margin-right: 0px;
+}
+h1 {
+    position: relative;
+    width: 25px;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+#header-button {
+
+    position: absolute; left: 500px; top: 0px;
+    text-align: right;
+    width: 30px;
+}
+#header-button a {
+    display: block;
+    width: 115px;
+    height: 25px;
+    background: #4E9CAF;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}

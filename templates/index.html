@@ -1,8 +1,9 @@
 {% extends "style.html" %}
 {% block title %} Brand new shop! {% endblock %}
 {% block header %}
-<div id="header-title">Products</div>
-<div id="header-button"><a href="add.html"></a> </div> {% endblock %}
+    <div> {{ message }} </div>
+    <div id="header-title"><h1>Products</h1></div>
+<div id="header-button"><a href="add.html">Add new product</a> </div> {% endblock %}
 {% block container %}
 <table>
 <thead>
