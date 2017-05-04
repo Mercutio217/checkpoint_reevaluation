@@ -40,6 +40,6 @@ class DBController:
     def remove_from_db(self, product_id):
         database = self.get_connection()
         cursor = database.cursor()
-        cursor.execute("DELETE FROM products WHERE id = ?", (product_id, ))
+        cursor.execute("DELETE FROM products WHERE id = ?", (product_id,))
         database.commit()
         database.close()

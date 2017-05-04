@@ -11,6 +11,7 @@ def index():
     list_of_products = my_controller.get_product_list()
     return render_template("index.html", list_of_products=list_of_products)
 
+
 @app.route("/add", methods=["GET", "POST"])
 def add_product():
     if request.method == "GET":
@@ -18,15 +19,13 @@ def add_product():
     else:
         new_product = Product(request.form["name"], request.form["description"], request.form["price"])
         my_controller.add_product(new_product)
-        return redirect(url_for("index"))
+        return redirect("index")
 
-@app.route("/remove/<int:product_id>")
+
+@app.route("/remove/<int:product_id>", methods=["GET", "POST"])
 def remove_product(product_id):
     my_controller.remove_product(product_id)
     return redirect(url_for("index"))
-
-
-
 
 
 if __name__ == '__main__':

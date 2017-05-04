@@ -2,7 +2,6 @@ from controller.DB_controller import DBController
 
 
 class Product_Controller:
-
     def __init__(self):
         self.database = DBController()
         self.connection = self.database.get_connection()
@@ -16,4 +15,3 @@ class Product_Controller:
 
     def remove_product(self, product_id):
         self.database.remove_from_db(product_id)
-

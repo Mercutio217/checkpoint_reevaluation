@@ -1,5 +1,4 @@
 class Product:
-
     def __init__(self, name, description, price):
         self.id = None
         self.name = name
@@ -8,4 +7,3 @@ class Product:
 
     def __repr__(self):
         return "{} Description: {} Price: {}".format(self.name, self.description, self.price)
-

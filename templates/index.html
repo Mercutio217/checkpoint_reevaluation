@@ -3,27 +3,28 @@
 {% block header %}
     <div> {{ message }} </div>
     <div id="header-title"><h1>Products</h1></div>
-<div id="header-button"><a href="/add">Add new product</a> </div> {% endblock %}
+    <div class="accept_button"><a href="/add">Add new product</a></div> {% endblock %}
 {% block container %}
-<table>
-<thead>
-<tr>
-    <th>Name</th>
-    <th>Description</th>
-    <th>Price</th>
-    <th></th>
-</tr>
-</thead>
-<tbody>
-{% for product in list_of_products %}
-    <tr>
-    <th>{{ product.name }}</th>
-    <th>{{ product.description }}</th>
-    <th>{{ product.price }}</th>
-    <th><a href="/remove/{{ product.id }}">Remove Product</a> </th>
-    </tr>
+    <table>
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for product in list_of_products %}
+            <tr>
+                <th>{{ product.name }}</th>
+                <th>{{ product.description }}</th>
+                <th>{{ product.price }}</th>
+                <th><a href="/remove/{{ product.id }}">Remove Product</a></th>
+            </tr>
 
-{% endfor %}
+        {% endfor %}
 
-</tbody>
-</table>{% endblock %}
+        </tbody>
+    </table>
+{% endblock %}
