@@ -10,3 +10,5 @@ class Product_Controller:
 
     def get_product_list(self):
         return self.product_list
+
+    def add_product
