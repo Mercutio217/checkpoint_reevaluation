@@ -1,6 +1,6 @@
 {% extends "style.html" %}
 {% block title %}Add new product {% endblock %}
-{% block header %}<div class="header-title">Add new product</div>{% endblock %}
+{% block header %}<div class="header-title"><h1>Add new product</h1></div>{% endblock %}
 {% block container %}
 <form action="{{ url_for('add_product') }}" method="POST">
                     {{ error_message }}
@@ -9,10 +9,10 @@
                         <input name="name" placeholder="Enter task's name">
                     </p>
                     <p>
-                       <div> <label>Description</label></div>
-                        <input class="description" name="description" placeholder="Enter description">
+                       <div> <label>Price</label></div>
+                        <input class="price" name="price" placeholder="Enter price">
                     </p>
-          <p> <input class="price" name="price" placeholder="Enter price"> </p>
+          <p> <input class="description" name="description" placeholder="Enter description"> </p>
                     <p> <button class="button" type="submit" formaction="/add"> Add task</button> </p>
 
                 </form>

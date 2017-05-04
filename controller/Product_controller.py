@@ -14,3 +14,6 @@ class Product_Controller:
     def add_product(self, product):
         self.database.add_to_db(product)
 
+    def remove_product(self, product_id):
+        self.database.remove_from_db(product_id)
+

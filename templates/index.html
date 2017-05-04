@@ -11,6 +11,7 @@
     <th>Name</th>
     <th>Description</th>
     <th>Price</th>
+    <th></th>
 </tr>
 </thead>
 <tbody>
@@ -19,6 +20,7 @@
     <th>{{ product.name }}</th>
     <th>{{ product.description }}</th>
     <th>{{ product.price }}</th>
+    <th><a href="/remove/{{ product.id }}">Remove Product</a> </th>
     </tr>
 
 {% endfor %}

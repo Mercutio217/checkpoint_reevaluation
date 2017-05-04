@@ -20,6 +20,13 @@ def add_product():
         my_controller.add_product(new_product)
         return render_template("index.html", message="Product added succesfully!")
 
+@app.route("/remove/<int:product_id>", methods=["POST"])
+def remove_product(product_id):
+    my_controller.remove_product(product_id)
+    return render_template("index.html", message="Product was succesfully removed!")
+
+
+
 
 
 if __name__ == '__main__':

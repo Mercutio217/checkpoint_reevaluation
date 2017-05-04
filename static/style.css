@@ -51,3 +51,7 @@ td, th {
 tr:nth-child(even) {
     background-color: #dddddd;
 }
+
+.description {
+    height: 120px;
+}
